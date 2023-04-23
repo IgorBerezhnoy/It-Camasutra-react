@@ -7,23 +7,26 @@ import Ratinng from "./components/Rating/Rating";
 function App() {
   return (
     <div>
-      {/* <PageTitle title={"This IS is APP component"} />
+      <PageTitle title={"This IS is APP component"} />
       <PageTitle title={"My friends"} />
       Article 1
       <Ratinng value={4} />
-      <Accordion titleValue={"Menu"} />
-      <Accordion titlevalue={"Users"} />
-      Article 2 */}
+      <Accordion titleValue={"Menu"} collapsed={true} />
+      <Accordion titleValue={"Users"} collapsed={false} />
+      Article 2
       <Ratinng value={0} />
       <Ratinng value={1} />
-      <Ratinng value={"dsf"} />
+      <Ratinng value={2} />
       <Ratinng value={3} />
       <Ratinng value={4} />
       <Ratinng value={5} />
     </div>
   );
 }
-function PageTitle(props: any) {
+type PageTitlePropsType = {
+  title: string;
+};
+function PageTitle(props: PageTitlePropsType) {
   return <h1>{props.title} </h1>;
 }
 

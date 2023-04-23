@@ -1,5 +1,7 @@
+import { type } from "os";
+
 type RatingPropsType = {
-  value: number;
+  value: 0 | 1 | 2 | 3 | 4 | 5;
 };
 function Ratinng(props: RatingPropsType) {
   if (props.value === 1) {
@@ -68,7 +70,11 @@ function Ratinng(props: RatingPropsType) {
   );
 }
 
-function Star(props: any) {
+type StarPropsType = {
+  selected: boolean;
+};
+
+function Star(props: StarPropsType) {
   if (props.selected === true) {
     return (
       <span>

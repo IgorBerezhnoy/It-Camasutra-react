@@ -1,12 +1,29 @@
-function Accordion(props: any) {
-  return (
-    <>
-      <AccordionTitle title={props.titleValue} />
-      <AccordionBody />
-    </>
-  );
+type AccordionPropsType = {
+  titleValue: string;
+  collapsed: boolean;
+};
+
+function Accordion(props: AccordionPropsType) {
+  if (props.collapsed === true) {
+    return (
+      <>
+        <AccordionTitle title={props.titleValue} />
+        <AccordionBody />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <AccordionTitle title={props.titleValue} />;
+      </>
+    );
+  }
 }
-function AccordionTitle(props: any) {
+type AccordionTitlePropsType = {
+  title: string;
+};
+
+function AccordionTitle(props: AccordionTitlePropsType) {
   return <h3>=== {props.title}</h3>;
 }
 function AccordionBody() {
